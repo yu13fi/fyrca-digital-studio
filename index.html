@@ -17,6 +17,7 @@
       </a>
       <div class="nav-links" id="navLinks">
         <a href="#servicios">Servicios</a>
+        <a href="#store-check">Store Check</a>
         <a href="#metodologia">Metodología</a>
         <a href="#nosotros">Sobre FYRCA</a>
         <a href="#contacto">Contacto</a>
@@ -73,6 +74,54 @@
             <p>Acompañamiento operativo para que tu presencia digital se mantenga actualizada y ordenada.</p>
             <ul><li>Actualización de contenidos</li><li>Revisiones periódicas</li><li>Soporte funcional y seguimiento</li></ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="store-check" id="store-check">
+      <div class="container">
+        <div class="store-check-grid">
+          <div class="store-check-copy">
+            <div class="eyebrow">FYRCA Store Check</div>
+            <h2>¿Tu tienda online está preparada para <span>vender mejor</span>?</h2>
+            <p>Revisamos los puntos clave de tu tienda para detectar oportunidades de mejora en diseño, navegación, experiencia móvil y proceso de compra.</p>
+            <div class="store-check-points">
+              <div><span aria-hidden="true">✦</span><span><strong>Diseño y navegación</strong><small>Claridad visual y facilidad para encontrar productos.</small></span></div>
+              <div><span aria-hidden="true">✦</span><span><strong>Experiencia móvil</strong><small>Revisión de la tienda desde celulares.</small></span></div>
+              <div><span aria-hidden="true">✦</span><span><strong>Proceso de compra</strong><small>Carrito, pasos de compra y posibles obstáculos.</small></span></div>
+              <div><span aria-hidden="true">✦</span><span><strong>Recomendaciones</strong><small>Hallazgos ordenados para que sepas por dónde empezar.</small></span></div>
+            </div>
+            <p class="store-check-note">El diagnóstico inicial es sin cargo y lo realiza FYRCA de forma personalizada. No es un análisis automático.</p>
+          </div>
+          <div class="store-check-panel">
+            <div class="store-check-panel-head">
+              <span class="store-check-mark" aria-hidden="true">F</span>
+              <div><strong>Solicitá tu análisis</strong><small>Compartinos los datos de tu tienda.</small></div>
+            </div>
+            <form class="store-check-form" id="storeCheckForm">
+              <label for="storeCheckName">Tu nombre</label>
+              <input id="storeCheckName" name="nombre" type="text" placeholder="¿Cómo te llamás?" autocomplete="name" required>
+              <label for="storeCheckUrl">URL de tu tienda</label>
+              <input id="storeCheckUrl" name="url" type="url" placeholder="https://mitienda.com" inputmode="url" required>
+              <label for="storeCheckPlatform">¿En qué plataforma está?</label>
+              <select id="storeCheckPlatform" name="plataforma" required>
+                <option value="">Seleccioná una plataforma</option>
+                <option>Tiendanube</option><option>Shopify</option><option>WooCommerce</option>
+                <option>Otra plataforma</option><option value="Todavía no tengo tienda">Todavía no tengo tienda</option>
+              </select>
+              <label for="storeCheckGoal">¿Qué te gustaría mejorar?</label>
+              <select id="storeCheckGoal" name="objetivo" required>
+                <option value="">Elegí una opción</option>
+                <option>Diseño y apariencia</option>
+                <option>Navegación y experiencia de usuario</option>
+                <option>Versión para celulares</option>
+                <option>Carrito y proceso de compra</option>
+                <option>Quiero una revisión general</option>
+              </select>
+              <button class="button store-check-submit" type="submit">Solicitar análisis gratuito <span aria-hidden="true">→</span></button>
+            </form>
+            <p class="store-check-form-note" id="storeCheckNote" role="status">Al continuar, se abrirá WhatsApp con tu solicitud lista para revisar y enviar.</p>
+          </div>
         </div>
       </div>
     </section>
