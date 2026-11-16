@@ -115,7 +115,7 @@ function initializeStoreCheckForm() {
       `Tienda: ${String(data.get("url") ?? "").trim()}`,
       `Plataforma: ${String(data.get("plataforma") ?? "").trim()}`,
       `Qué quiero mejorar: ${String(data.get("objetivo") ?? "").trim()}`
-    ].join("\\n");
+    ].join("\n");
     const url = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank", "noopener,noreferrer");
     note.textContent = "Se abrió WhatsApp con tu solicitud preparada. Revisala y tocá Enviar para compartirla.";
