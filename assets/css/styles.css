@@ -155,3 +155,33 @@ footer{background:var(--forest-deep);color:#D3E0D8;padding:28px 0}
  .footer-inner{flex-direction:column;align-items:flex-start;gap:8px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+
+/* Mascota oficial FYRCA: el rostro aprobado se conserva como imagen maestra. */
+.mascot-guide{
+  position:fixed;z-index:15;right:max(18px,calc((100vw - var(--max))/2 - 8px));bottom:18px;
+  width:clamp(118px,14vw,178px);display:grid;justify-items:center;gap:8px;
+  pointer-events:none;opacity:1;transform:translateY(0);
+  transition:opacity .28s ease,transform .28s ease;
+}
+.mascot-guide img{
+  display:block;width:100%;height:auto;max-height:38vh;object-fit:contain;
+  border-radius:22px;box-shadow:0 14px 38px rgba(10,24,20,.22);
+}
+.mascot-guide-caption{
+  display:block;padding:7px 13px;border-radius:999px;background:var(--forest);color:#fff;
+  border:1px solid rgba(185,217,197,.55);font-size:.72rem;font-weight:700;letter-spacing:.02em;
+  box-shadow:0 8px 22px rgba(10,24,20,.15);white-space:nowrap;
+}
+.mascot-guide.is-hidden{opacity:0;transform:translateY(12px)}
+.mascot-guide[data-scene="servicios"] .mascot-guide-caption,
+.mascot-guide[data-scene="metodologia"] .mascot-guide-caption{background:#28594D}
+.mascot-guide[data-scene="plataformas"] .mascot-guide-caption,
+.mascot-guide[data-scene="portfolio"] .mascot-guide-caption{background:#8A655A}
+.mascot-guide[data-scene="store-check"] .mascot-guide-caption{background:#496D55}
+@media(max-width:760px){
+ .mascot-guide{right:10px;bottom:10px;width:92px;gap:5px}
+ .mascot-guide img{max-height:21vh;border-radius:14px}
+ .mascot-guide-caption{font-size:.58rem;padding:5px 8px;max-width:110px;overflow:hidden;text-overflow:ellipsis}
+}
+@media(prefers-reduced-motion:reduce){.mascot-guide{transition:none}}
