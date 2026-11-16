@@ -145,7 +145,7 @@ function initializeFyrcaMascot() {
     if (!pose || poseName === currentPose) return;
     currentPose = poseName;
     image.classList.add("is-changing");
-    const nextSrc = `assets/images/mascota/${pose.file}`;
+    const nextSrc = `/fyrca-digital-studio/assets/images/mascota/${pose.file}`;
     const preload = new Image();
     preload.onload = () => {
       image.src = nextSrc;
