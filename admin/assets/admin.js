@@ -128,10 +128,20 @@
     catch(error){message(adminMessage,"No se pudo guardar el adicional: "+error.message,true);}
   });
   $("#proposalForm").addEventListener("submit", async event => {
-    event.preventDefault(); const form = new FormData(event.currentTarget);
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
     const record = {client_name:String(form.get("client_name")).trim(),business_name:String(form.get("business_name")).trim()||null,email:String(form.get("email")).trim()||null,whatsapp:String(form.get("whatsapp")).trim()||null,valid_until:String(form.get("valid_until"))||null,notes:String(form.get("notes")).trim()||null};
-    try { const {error}=await client.from("fyrca_proposals").insert(record); if(error)throw error; event.currentTarget.reset(); await refreshAll(); }
-    catch(error){message(adminMessage,"No se pudo crear la propuesta: "+error.message,true);}
+    try {
+      const lineItems=[...document.querySelectorAll("#proposalItems .proposal-item-row")].map(row=>({title:row.querySelector(".item-title").value.trim(),description:row.querySelector(".item-description").value.trim()||null,quantity:Number(row.querySelector(".item-quantity").value||1),unit_price_ars:Number(row.querySelector(".item-price").value||0)})).filter(item=>item.title);
+      if(!lineItems.length) throw new Error("Agregá al menos un servicio a la propuesta.");
+      const {data:proposal,error}=await client.from("fyrca_proposals").insert(record).select("id").single();
+      if(error) throw error;
+      const {error:itemError}=await client.from("fyrca_proposal_items").insert(lineItems.map(item=>({...item,proposal_id:proposal.id})));
+      if(itemError) throw itemError;
+      document.dispatchEvent(new CustomEvent("fyrca:proposal-saved",{detail:{record,items:lineItems}}));
+      event.currentTarget.reset();$("#proposalItems").innerHTML="";
+      await refreshAll();
+    } catch(error) { message(adminMessage,"No se pudo crear la propuesta: "+error.message,true); }
   });
 
   window.addEventListener("DOMContentLoaded", async () => {
