@@ -47,10 +47,9 @@
     doc.save("FYRCA-propuesta-"+slug+".pdf");
   }
   add.addEventListener("click",addRow);addRow();
-  form.addEventListener("submit",event=>{
-    const data=new FormData(form),lines=items();
-    if(!lines.length){event.preventDefault();event.stopImmediatePropagation();note.textContent="Agregá al menos un servicio a la propuesta.";return;}
-    try{pdf(data,lines);note.textContent="PDF generado. La propuesta se registra en el panel.";}
+  document.addEventListener("fyrca:proposal-saved",event=>{
+    const data=new FormData(form),lines=event.detail.items.map(item=>({title:item.title,description:item.description||"",quantity:item.quantity,price:item.unit_price_ars}));
+    try{pdf(data,lines);note.textContent="Propuesta guardada y PDF generado.";}
     catch(error){note.textContent=error.message;}
   },true);
 })();
