@@ -186,3 +186,51 @@ footer{background:var(--forest-deep);color:#D3E0D8;padding:28px 0}
  .nav-cta{padding:8px 9px;font-size:.7rem}
  .mascot-widget{right:12px;width:84px;height:102px}
 }
+
+
+/* Corrección definitiva del ancho en navegadores móviles integrados */
+@media screen and (max-width: 760px) {
+  html, body {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+  }
+  body > main {
+    display: block;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+  body > main > section,
+  body > main > .hero,
+  body > main > .services-section,
+  body > main > .platforms-section,
+  body > main > .store-check,
+  body > main > .portfolio-section,
+  body > main > .method-section,
+  body > main > .about-section,
+  body > main > .contact-section {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .nav-contact { display: none !important; }
+  .nav-wrap, nav.container {
+    width: 100% !important;
+    max-width: none !important;
+  }
+  nav.container {
+    padding-left: 14px;
+    padding-right: 14px;
+    gap: 8px;
+  }
+  .nav-cta { margin-left: auto; }
+  .menu-toggle { flex: 0 0 42px; }
+  .hero:before { right: -180px; }
+  .mascot-widget { right: 12px; }
+}
