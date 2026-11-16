@@ -327,3 +327,35 @@ body { background: var(--cream); }
 .contact-panel { background: #E9E3D9; }
 .about-tags span { background: #E9E3D9; }
 footer { background: #202624; }
+
+
+/* Propuesta visual amarilla: reemplaza el gris verdoso por amarillo mantequilla */
+:root {
+  --butter: #E8CF7A;
+  --pistachio: #E8CF7A;
+  --sky: #E8CF7A;
+  --cream: #E9E3D9;
+  --paper: #F0EBE2;
+  --pink: #C98F91;
+}
+.service-qa { background: #EEE3BF; }
+.service-ecommerce { background: #EADBD7; }
+.service-support { background: #EEE8DE; }
+.platform-index,
+.platform-item:nth-child(2) .platform-index,
+.platform-item:nth-child(3) .platform-index { background: #E8CF7A; }
+.art-core { background: #E8CF7A; color: #292D2B; }
+.sticker-yellow { background: #E8CF7A; color: #292D2B; }
+.store-check .eyebrow,
+.store-check-points>div>span:first-child,
+.method-grid .eyebrow,
+.contact-section .eyebrow,
+.step-num,
+.contact-aside strong,
+.about-mark { color: #292D2B; }
+.store-check-points>div>span:first-child,
+.step-num,
+.about-mark { background: #E8CF7A; }
+.method-grid h2 span { color: #E8CF7A; }
+.contact-aside { border-left-color: #E8CF7A; }
+.project-label { color: #8A6668; }
