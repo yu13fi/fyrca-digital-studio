@@ -253,3 +253,30 @@ footer{background:var(--forest-deep);color:#D3E0D8;padding:28px 0}
   .nav-cta { padding: 8px 8px !important; font-size: .68rem !important; }
   .mascot-widget { right: 10px !important; }
 }
+
+
+/* FYRCA mobile compact layout: no empty hamburger column or side gutter */
+@media screen and (max-width: 760px) {
+  html, body { width: 100%; max-width: 100%; margin: 0; overflow-x: clip; }
+  body > .nav-wrap, body > main, body > footer { width: 100%; max-width: 100%; margin-inline: 0; }
+  body > main > section { width: 100%; max-width: 100%; min-width: 0; margin-inline: 0; }
+  nav.container {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto 42px;
+    align-items: center;
+    width: calc(100% - 24px) !important;
+    padding: 0;
+    gap: 8px;
+  }
+  .nav-contact { display: none !important; }
+  .brand { min-width: 0; }
+  .nav-cta { margin: 0 !important; justify-self: end; }
+  .menu-toggle { display: grid !important; width: 42px; height: 42px; padding: 0; justify-self: end; }
+  .hero-grid, .hero-bottom { width: calc(100% - 34px); max-width: none; }
+  .mascot-widget { right: 12px !important; }
+}
+@media screen and (max-width: 380px) {
+  nav.container { width: calc(100% - 18px) !important; grid-template-columns: minmax(0, 1fr) auto 38px; gap: 6px; }
+  .menu-toggle { width: 38px; height: 38px; }
+  .nav-cta { padding: 8px 8px !important; font-size: .68rem !important; }
+}
