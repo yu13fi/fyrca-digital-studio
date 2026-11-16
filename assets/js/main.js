@@ -124,3 +124,42 @@ function initializeStoreCheckForm() {
 
 
 initializeStoreCheckForm();
+
+
+function initializeMascotGuide() {
+  const mascot = document.querySelector("#mascotGuide");
+  const caption = document.querySelector("#mascotGuideCaption");
+  if (!mascot || !caption || !("IntersectionObserver" in window)) return;
+
+  const scenes = [
+    { id: "inicio", label: "Conocé FYRCA" },
+    { id: "servicios", label: "Calidad y soluciones" },
+    { id: "plataformas", label: "E-commerce" },
+    { id: "store-check", label: "Store Check" },
+    { id: "portfolio", label: "Proyectos reales" },
+    { id: "metodologia", label: "Construimos con método" },
+    { id: "nosotros", label: "Quiénes somos" },
+    { id: "contacto", label: "Hablemos de tu proyecto" }
+  ];
+
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+
+    const scene = scenes.find((item) => item.id === visible.target.id);
+    if (!scene) return;
+
+    mascot.dataset.scene = scene.id;
+    caption.textContent = scene.label;
+    mascot.classList.toggle("is-hidden", scene.id === "contacto");
+  }, { rootMargin: "-32% 0px -48% 0px", threshold: [0, 0.15, 0.35, 0.6] });
+
+  scenes.forEach(({ id }) => {
+    const section = document.getElementById(id);
+    if (section) observer.observe(section);
+  });
+}
+
+initializeMascotGuide();
