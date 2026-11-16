@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#183C35">
+  <title>FYRCA | Administración privada</title>
+  <link rel="stylesheet" href="assets/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/admin.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a class="brand" href="../"><span>F.</span><strong>FYRCA <small>ADMINISTRACIÓN PRIVADA</small></strong></a><span class="private-label">ÁREA PRIVADA</span></header>
+    <section id="loginView" class="login-card">
+      <p class="eyebrow">ACCESO RESTRINGIDO</p><h1>Bienvenida a FYRCA</h1>
+      <p class="muted">Ingresá con la cuenta administradora autorizada.</p>
+      <form id="loginForm">
+        <label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="username" required value="fyrcatech@gmail.com">
+        <label for="password">Contraseña</label><input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button class="primary" type="submit">Ingresar al panel</button>
+      </form>
+      <p id="loginMessage" class="message" role="status"></p>
+    </section>
+    <section id="adminView" hidden>
+      <div class="welcome"><div><p class="eyebrow">PANEL COMERCIAL</p><h1>Tu espacio de trabajo</h1><p class="muted">Planes, adicionales y propuestas comerciales de FYRCA.</p></div><button id="logoutButton" class="secondary">Cerrar sesión</button></div>
+      <nav class="tabs" aria-label="Secciones del panel">
+        <button class="tab active" data-tab="plans">Planes</button><button class="tab" data-tab="extras">Adicionales</button><button class="tab" data-tab="proposals">Propuestas</button>
+      </nav>
+      <section id="plansPanel" class="panel">
+        <div class="panel-head"><div><h2>Planes comerciales</h2><p class="muted">Precios y alcance internos; no se publican en la web.</p></div></div>
+        <form id="planForm" class="entry-form"><input name="name" placeholder="Nombre del plan" required><input name="price" type="number" min="0" step="0.01" placeholder="Precio ARS" required><input name="description" placeholder="Descripción"><textarea name="features" placeholder="Incluye (un punto por línea)"></textarea><button class="primary" type="submit">Guardar plan</button></form>
+        <div id="plansList" class="data-list"></div>
+      </section>
+      <section id="extrasPanel" class="panel" hidden>
+        <div class="panel-head"><div><h2>Servicios adicionales</h2><p class="muted">Conceptos que podés sumar a una propuesta.</p></div></div>
+        <form id="extraForm" class="entry-form"><input name="name" placeholder="Nombre del adicional" required><input name="price" type="number" min="0" step="0.01" placeholder="Precio ARS" required><input name="description" placeholder="Descripción"><button class="primary" type="submit">Guardar adicional</button></form>
+        <div id="extrasList" class="data-list"></div>
+      </section>
+      <section id="proposalsPanel" class="panel" hidden>
+        <div class="panel-head"><div><h2>Propuestas comerciales</h2><p class="muted">Registrá presupuestos personalizados y su seguimiento.</p></div></div>
+        <form id="proposalForm" class="entry-form"><input name="client_name" placeholder="Nombre del cliente" required><input name="business_name" placeholder="Negocio"><input name="email" type="email" placeholder="Correo"><input name="whatsapp" placeholder="WhatsApp"><input name="valid_until" type="date"><textarea name="notes" placeholder="Notas y alcance acordado"></textarea><button class="primary" type="submit">Crear propuesta</button></form>
+        <div id="proposalsList" class="data-list"></div>
+      </section>
+      <p id="adminMessage" class="message" role="status"></p>
+    </section>
+    <footer>FYRCA Digital Studio · Información comercial confidencial</footer>
+  </main>
+</body>
+</html>
