@@ -355,3 +355,16 @@ footer{background:var(--forest-deep);color:#D3E0D8;padding:28px 0}
   nav.container { grid-template-columns: minmax(0,1fr) auto 40px !important; }
   .nav-contact-desktop { display: none !important; }
 }
+
+
+/* Ajuste fino: separar visualmente el logotipo del botón de contacto en móvil */
+@media screen and (max-width: 760px) {
+  .brand { gap: 5px !important; font-size: .9rem !important; letter-spacing: .065em !important; }
+  .brand-mark { width: 34px !important; height: 34px !important; flex-basis: 34px !important; border-radius: 12px 12px 12px 4px !important; font-size: 1.05rem !important; }
+  .brand-name small { font-size: .48rem !important; letter-spacing: .16em !important; }
+}
+@media screen and (max-width: 380px) {
+  .brand { font-size: .84rem !important; gap: 4px !important; }
+  .brand-mark { width: 32px !important; height: 32px !important; flex-basis: 32px !important; }
+  .brand-name small { font-size: .44rem !important; }
+}
