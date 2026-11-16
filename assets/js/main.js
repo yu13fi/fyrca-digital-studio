@@ -25,12 +25,25 @@ function initializeNavigation() {
   });
 }
 
+function validatePersonName(input) {
+  if (!input) return true;
+  const value = input.value.trim();
+  const valid = value.length >= 2 && value.length <= 60 &&
+    /^[\\p{L}]+(?:[ '\\u2019-][\\p{L}]+)*$/u.test(value);
+  input.setCustomValidity(
+    valid || !value ? "" : "Ingresá un nombre de 2 a 60 caracteres, usando solo letras, espacios, apóstrofes o guiones."
+  );
+  return valid;
+}
+
 function initializeContactForm() {
   const form = document.querySelector("#contactForm");
   const formNote = document.querySelector("#formNote");
 
   if (!form || !formNote) return;
 
+  const nameInput = form.elements.nombre;
+  nameInput.addEventListener("input", () => validatePersonName(nameInput));
   const emailInput = form.elements.email;
   const emailConfirmation = form.elements.emailConfirm;
 
@@ -50,6 +63,7 @@ function initializeContactForm() {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    validatePersonName(nameInput);
     validateEmailConfirmation();
     if (!form.checkValidity()) {
       form.reportValidity();
@@ -101,8 +115,11 @@ function initializeStoreCheckForm() {
   const note = document.querySelector("#storeCheckNote");
   if (!form || !note) return;
 
+  const nameInput = form.elements.nombre;
+  nameInput.addEventListener("input", () => validatePersonName(nameInput));
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    validatePersonName(nameInput);
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
