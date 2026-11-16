@@ -140,7 +140,7 @@
           <div class="panel-heading"><span class="panel-icon">F.</span><div><strong>Solicitá tu Store Check</strong><small>Contanos un poco sobre tu tienda.</small></div></div>
           <form class="store-check-form" id="storeCheckForm">
             <label for="storeCheckName">Tu nombre</label>
-            <input id="storeCheckName" name="nombre" type="text" placeholder="¿Cómo te llamás?" autocomplete="name" required>
+            <input id="storeCheckName" name="nombre" type="text" placeholder="¿Cómo te llamás?" autocomplete="name" minlength="2" maxlength="60" pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+([ '-][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)*" title="Usá solo letras, espacios, apóstrofes o guiones. No se permiten números ni símbolos." required>
             <label for="storeCheckUrl">URL de tu tienda o publicación</label>
             <input id="storeCheckUrl" name="url" type="url" placeholder="https://mitienda.com" inputmode="url" required>
             <label for="storeCheckPlatform">¿Dónde vendés?</label>
@@ -225,7 +225,7 @@
         <div class="contact-panel">
           <form class="contact-form" id="contactForm">
             <label class="visually-hidden" for="contactName">Tu nombre</label>
-            <input id="contactName" type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" required>
+            <input id="contactName" type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" minlength="2" maxlength="60" pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+([ '-][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)*" title="Usá solo letras, espacios, apóstrofes o guiones. No se permiten números ni símbolos." required>
             <label class="visually-hidden" for="contactEmail">Tu correo electrónico</label>
             <input id="contactEmail" type="email" name="email" placeholder="Tu correo electrónico" autocomplete="email" pattern="[^\s@]+@[^\s@]+\.[^\s@]{2,}" title="Ingresá un correo válido, por ejemplo nombre@dominio.com" required>
             <label class="visually-hidden" for="contactEmailConfirm">Repetí tu correo electrónico</label>
