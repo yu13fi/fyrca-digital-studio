@@ -16,8 +16,16 @@ function initializeNavigation() {
     menuToggle.textContent = isOpen ? "×" : "☰";
   }
 
-  menuToggle.addEventListener("click", () => {
+  menuToggle.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+      setMenuOpen(false);
+    }
   });
 
   navLinks.querySelectorAll("a").forEach((link) => {
