@@ -534,3 +534,98 @@ footer { border-top: 1px solid rgba(255,61,154,.18); }
 @media(max-width:760px) {
   .nav-links { background: #202624; }
 }
+
+
+/* FYRCA — Lemon Yellow + Cobalt Blue + Hot Pink */
+:root {
+  --lemon: #EAF542;
+  --lemon-soft: #F4F7A0;
+  --lemon-pale: #FAFBD9;
+  --forest: #202624;
+  --forest-deep: #EAF542;
+  --forest-soft: #DDE82B;
+  --cream: #202624;
+  --paper: #F4F7A0;
+  --ink: #202624;
+  --muted: #4E5547;
+  --line: rgba(32,38,36,.18);
+  --butter: #2855D9;
+  --pistachio: #EAF542;
+  --sky: #EAF542;
+  --pink: #FF3D9A;
+}
+html, body { background: var(--lemon); color: #202624; }
+.nav-wrap, footer, .hero, .method-section, .contact-section,
+.services-section, .portfolio-section, .about-section, .platforms-section {
+  background: var(--lemon) !important;
+  color: #202624;
+}
+.nav-wrap { border-bottom-color: rgba(32,38,36,.18); }
+.brand, .brand-name, .brand-name small, .nav-links,
+.hero, .hero-copy, .hero-note, .hero-bottom,
+.method-section, .method-grid>div>p, .step h3, .step p,
+.contact-section, .contact-intro>p, .contact-aside,
+.footer-brand, footer { color: #202624; }
+.brand-mark { background: #2855D9; color: #FFFFFF; }
+.nav-links a:hover, .nav-cta:hover { color: #FF3D9A; }
+.nav-cta, .button, .hero .button, .contact-form .button,
+.portfolio-copy .button {
+  background: #2855D9; border-color: #2855D9; color: #FFFFFF;
+}
+.nav-cta:hover, .button:hover { background: #1F45B8; border-color: #1F45B8; }
+.button.secondary, .hero .button.secondary, .method-grid .button.secondary,
+.contact-form .button.secondary {
+  background: transparent; color: #202624; border-color: rgba(32,38,36,.45);
+}
+.hero h1 span, .section-head h2 span, .platforms-intro h2 span,
+.method-grid h2 span, .about-copy h2 span { color: #2855D9; }
+.hero .eyebrow, .eyebrow, .contact-section .eyebrow,
+.method-grid .eyebrow { color: #FF3D9A; }
+.hero::before { background: radial-gradient(circle, rgba(255,61,154,.16), transparent 68%); }
+.hero-bottom { border-top-color: rgba(32,38,36,.2); }
+.art-orbit { border-color: rgba(32,38,36,.25); }
+.orbit-two { border-color: rgba(40,85,217,.5); }
+.art-core, .about-mark { background: #2855D9; color: #FFFFFF; box-shadow: 18px 22px 0 rgba(255,61,154,.8); }
+.sticker-pink { background: #FF3D9A; color: #202624; }
+.sticker-yellow { background: #2855D9; color: #FFFFFF; }
+.art-caption { color: #4E5547; }
+
+.service-card, .portfolio-card, .contact-panel, .store-check-panel,
+.step { background: var(--lemon-soft); color: #202624; border-color: rgba(32,38,36,.16); box-shadow: 0 10px 24px rgba(32,38,36,.06); }
+.service-ecommerce, .service-qa, .service-support { background: var(--lemon-soft); }
+.service-card h3, .service-card p, .service-card ul,
+.portfolio-copy h3, .portfolio-copy>p, .project-tags span,
+.panel-heading strong, .panel-heading small, .store-check-form label,
+.contact-panel, .contact-form label { color: #202624; }
+.service-number, .service-kicker, .text-link, .project-label,
+.platform-arrow, .contact-aside strong, .footer-brand span { color: #FF3D9A; }
+.service-symbol { background: rgba(40,85,217,.14); color: #2855D9; }
+.platform-list, .platform-item { border-color: rgba(32,38,36,.18); }
+.platform-index, .platform-item:nth-child(2) .platform-index,
+.platform-item:nth-child(3) .platform-index { background: #2855D9; color: #FFFFFF; }
+.platform-item h3, .platform-item p { color: #202624; }
+
+.store-check { background: #2855D9; color: #FFFFFF; }
+.store-check .eyebrow, .store-check-copy h2,
+.store-check-copy h2 span, .store-check-points strong { color: #FFFFFF; }
+.store-check-copy>p, .store-check-points small, .store-check-note { color: rgba(255,255,255,.9); }
+.store-check-points>div>span:first-child, .panel-icon { background: #FF3D9A; color: #202624; }
+.store-check-form input, .store-check-form select,
+.contact-form input, .contact-form textarea {
+  background: #FAFBD9; color: #202624; border-color: rgba(32,38,36,.22);
+}
+.store-check-form input::placeholder, .contact-form input::placeholder,
+.contact-form textarea::placeholder { color: #626A55; }
+.store-check-form-note, .form-note { color: #4E5547; }
+.store-check-submit { background: #FF3D9A; border-color: #FF3D9A; color: #202624; }
+.portfolio-art { background: linear-gradient(135deg,#2855D9 0%,#FF3D9A 100%); color: #FFFFFF; }
+.project-tags span, .about-tags span { border-color: rgba(32,38,36,.22); color: #202624; }
+.step { background: var(--lemon-pale); }
+.step-num { background: #2855D9; color: #FFFFFF; }
+.contact-aside { border-left-color: #FF3D9A; }
+footer { border-top: 1px solid rgba(32,38,36,.18); }
+.footer-brand { color: #202624; }
+@media(max-width:760px) {
+  .nav-links { background: var(--lemon); border-bottom-color: rgba(32,38,36,.18); }
+  .menu-toggle { color: #202624; border-color: rgba(32,38,36,.25); }
+}
