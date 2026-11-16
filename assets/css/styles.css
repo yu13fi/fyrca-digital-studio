@@ -234,3 +234,22 @@ footer{background:var(--forest-deep);color:#D3E0D8;padding:28px 0}
   .hero:before { right: -180px; }
   .mascot-widget { right: 12px; }
 }
+
+
+/* Mobile viewport: full-width layout, including Instagram in-app browser */
+@media screen and (max-width: 760px) {
+  html { width: 100% !important; max-width: 100% !important; }
+  body { width: 100% !important; min-width: 0 !important; max-width: 100% !important; margin: 0 !important; }
+  .nav-wrap, main, .hero, footer { width: 100% !important; max-width: none !important; }
+  .nav-wrap { overflow: visible !important; }
+  nav.container { width: calc(100% - 28px) !important; max-width: none !important; }
+  .nav-contact { display: none !important; }
+  .nav-cta { margin-left: auto; }
+  .hero-grid, .hero-bottom { width: calc(100% - 34px) !important; max-width: none !important; }
+  .mascot-widget { right: 14px !important; }
+}
+@media screen and (max-width: 380px) {
+  nav.container { width: calc(100% - 20px) !important; }
+  .nav-cta { padding: 8px 8px !important; font-size: .68rem !important; }
+  .mascot-widget { right: 10px !important; }
+}
