@@ -294,3 +294,36 @@ footer { background: var(--forest-deep); }
   .hero { background: var(--cream); }
   .hero-bottom { color: #69716B; }
 }
+
+
+/* Ajuste de confort visual: marfil cálido, menos blanco */
+:root {
+  --cream: #E9E3D9;
+  --paper: #F0EBE2;
+  --pistachio: #D7E0D8;
+  --sky: #D7E0D8;
+  --butter: #E9E3D9;
+  --pink: #C98F91;
+  --ink: #292D2B;
+  --muted: #626A65;
+}
+body { background: var(--cream); }
+.nav-wrap { background: rgba(233,227,217,.97); }
+.hero { background: #E9E3D9; }
+.hero-copy { color: #59615C; }
+.services-section,.portfolio-section,.about-section { background: #E9E3D9; }
+.service-card { box-shadow: 0 6px 18px rgba(41,45,43,.025); }
+.service-ecommerce { background: #EADBD7; }
+.service-qa { background: #DCE4DC; }
+.service-support { background: #EEE8DE; }
+.platforms-section { background: #F0EBE2; }
+.platform-index { background: #D7E0D8; }
+.platform-item:nth-child(2) .platform-index { background: #EADBD7; }
+.platform-item:nth-child(3) .platform-index { background: #E4DED3; }
+.store-check-panel { background: #F0EBE2; }
+.store-check-form input,.store-check-form select,.contact-form input,.contact-form textarea {
+  background: #E9E3D9;
+}
+.contact-panel { background: #E9E3D9; }
+.about-tags span { background: #E9E3D9; }
+footer { background: #202624; }
