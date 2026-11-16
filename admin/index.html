@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="assets/admin.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
   <script src="assets/admin.js" defer></script>
   <script src="assets/proposal-pdf.js" defer></script>
 </head>
@@ -50,7 +49,7 @@
           <input name="whatsapp" placeholder="WhatsApp">
           <label class="full" for="validUntil">Válida hasta</label><input id="validUntil" class="full" name="valid_until" type="date">
           <textarea class="full" name="notes" placeholder="Alcance, condiciones y notas para el cliente"></textarea>
-          <div class="full items-editor"><div class="items-heading"><strong>Servicios incluidos</strong><button id="addProposalItem" class="secondary" type="button">+ Agregar ítem</button></div><div id="proposalItems" class="proposal-items"></div></div>
+          <div class="full items-editor"><label for="proposalPlan">Plan FYRCA</label><select id="proposalPlan" class="full"><option value="">Seleccionar un plan (opcional)</option></select><label for="proposalExtra">Servicio adicional</label><select id="proposalExtra" class="full"><option value="">Seleccionar adicional (opcional)</option></select><div class="items-heading"><strong>Servicios incluidos</strong><button id="addProposalItem" class="secondary" type="button">+ Agregar ítem</button></div><div id="proposalItems" class="proposal-items"></div></div>
           <button class="primary full" type="submit">Guardar propuesta y generar PDF</button>
         </form>
         <div id="proposalsList" class="data-list"></div>
