@@ -8,6 +8,7 @@
   <title>FYRCA | Administración privada</title>
   <link rel="stylesheet" href="assets/admin.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
   <script src="assets/admin.js" defer></script>
 </head>
 <body>
@@ -40,7 +41,16 @@
       </section>
       <section id="proposalsPanel" class="panel" hidden>
         <div class="panel-head"><div><h2>Propuestas comerciales</h2><p class="muted">Registrá presupuestos personalizados y su seguimiento.</p></div></div>
-        <form id="proposalForm" class="entry-form"><input name="client_name" placeholder="Nombre del cliente" required><input name="business_name" placeholder="Negocio"><input name="email" type="email" placeholder="Correo"><input name="whatsapp" placeholder="WhatsApp"><input name="valid_until" type="date"><textarea name="notes" placeholder="Notas y alcance acordado"></textarea><button class="primary" type="submit">Crear propuesta</button></form>
+        <form id="proposalForm" class="entry-form">
+          <input name="client_name" placeholder="Nombre del cliente" required>
+          <input name="business_name" placeholder="Nombre del negocio">
+          <input name="email" type="email" placeholder="Correo electrónico">
+          <input name="whatsapp" placeholder="WhatsApp">
+          <label class="full" for="validUntil">Válida hasta</label><input id="validUntil" class="full" name="valid_until" type="date">
+          <textarea class="full" name="notes" placeholder="Alcance, condiciones y notas para el cliente"></textarea>
+          <div class="full items-editor"><div class="items-heading"><strong>Servicios incluidos</strong><button id="addProposalItem" class="secondary" type="button">+ Agregar ítem</button></div><div id="proposalItems" class="proposal-items"></div></div>
+          <button class="primary full" type="submit">Guardar propuesta y generar PDF</button>
+        </form>
         <div id="proposalsList" class="data-list"></div>
       </section>
       <p id="adminMessage" class="message" role="status"></p>
