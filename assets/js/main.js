@@ -124,3 +124,53 @@ function initializeStoreCheckForm() {
 
 
 initializeStoreCheckForm();
+
+
+function initializeFyrcaMascot() {
+  const image = document.querySelector("#fyrcaMascot");
+  const status = document.querySelector("#fyrcaMascotStatus");
+  const targets = document.querySelectorAll("[data-mascot-pose]");
+  if (!image || !targets.length) return;
+
+  const poses = {
+    inicio: { file: "approved-inicio.webp", label: "bienvenida" },
+    qa: { file: "approved-qa.webp", label: "control de calidad QA" },
+    programacion: { file: "approved-programacion.webp", label: "programación" },
+    ecommerce: { file: "approved-ecommerce.webp", label: "e-commerce" }
+  };
+  let currentPose = "inicio";
+
+  function setPose(poseName) {
+    const pose = poses[poseName];
+    if (!pose || poseName === currentPose) return;
+    currentPose = poseName;
+    image.classList.add("is-changing");
+    const nextSrc = `assets/images/mascota/${pose.file}`;
+    const preload = new Image();
+    preload.onload = () => {
+      image.src = nextSrc;
+      image.alt = `Mascota FYRCA: ${pose.label}`;
+      if (status) status.textContent = `Mascota FYRCA: ${pose.label}`;
+      requestAnimationFrame(() => image.classList.remove("is-changing"));
+    };
+    preload.onerror = () => image.classList.remove("is-changing");
+    preload.src = nextSrc;
+  }
+
+  if ("IntersectionObserver" in window) {
+    const visible = new Map();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const pose = entry.target.dataset.mascotPose;
+        if (!pose) return;
+        if (entry.isIntersecting) visible.set(entry.target, entry.intersectionRatio);
+        else visible.delete(entry.target);
+      });
+      const candidates = [...visible.entries()].sort((a, b) => b[1] - a[1]);
+      if (candidates.length) setPose(candidates[0][0].dataset.mascotPose);
+    }, { root: null, rootMargin: "-34% 0px -42% 0px", threshold: [0, 0.1, 0.25, 0.5, 0.75] });
+    targets.forEach((target) => observer.observe(target));
+  }
+}
+
+initializeFyrcaMascot();
