@@ -472,3 +472,65 @@ footer { background: #191E1C; color: #AEB6B0; }
   .nav-links { background: #202624; border-bottom-color: var(--line); }
   .hero { background: #202624; }
 }
+
+
+/* FYRCA — cobalt blue + hot pink accents; preserve graphite surfaces */
+:root {
+  --butter: #2855D9;
+  --pistachio: #2855D9;
+  --sky: #2855D9;
+  --pink: #FF3D9A;
+}
+.brand-mark { background: #2855D9; color: #FFFFFF; }
+.nav-cta,.button { background: #2855D9; border-color: #2855D9; color: #FFFFFF; }
+.nav-cta:hover,.button:hover { background: #1F45B8; border-color: #1F45B8; color: #FFFFFF; }
+.button.secondary { color: #FFFFFF; border-color: rgba(255,255,255,.42); }
+.nav-links a:hover { color: #FF3D9A; }
+
+.hero h1 span,.method-grid h2 span { color: #2855D9; }
+.hero .eyebrow,.contact-section .eyebrow { color: #FF3D9A; }
+.hero .button { background: #2855D9; border-color: #2855D9; color: #FFFFFF; }
+.hero .button:hover { background: #1F45B8; }
+.hero .button.secondary { color: #FFFFFF; border-color: rgba(255,255,255,.45); }
+.eyebrow-dot { background: #FF3D9A; box-shadow: 0 0 0 5px rgba(255,61,154,.16); }
+.art-core { background: #2855D9; color: #FFFFFF; box-shadow: 18px 22px 0 rgba(255,61,154,.82); }
+.sticker-pink { background: #FF3D9A; color: #202624; }
+.sticker-yellow { background: #2855D9; color: #FFFFFF; }
+.orbit-two { border-color: rgba(40,85,217,.55); }
+
+.service-number,.service-kicker { color: #FF3D9A; }
+.service-symbol { background: rgba(40,85,217,.18); color: #FFFFFF; }
+.text-link { color: #FF3D9A; }
+.platform-index,.platform-item:nth-child(2) .platform-index,.platform-item:nth-child(3) .platform-index { background: #2855D9; color: #FFFFFF; }
+.platform-arrow { color: #FF3D9A; }
+
+.store-check { background: #2855D9; color: #FFFFFF; }
+.store-check .eyebrow,.store-check-copy h2,.store-check-copy h2 span,
+.store-check-points strong { color: #FFFFFF; }
+.store-check-copy>p,.store-check-points small,.store-check-note { color: rgba(255,255,255,.84); }
+.store-check-points>div>span:first-child { background: #FF3D9A; color: #202624; }
+.store-check-panel { background: #303733; border-color: rgba(255,255,255,.18); }
+.panel-heading strong,.store-check-form label { color: #FFFFFF; }
+.panel-heading small,.store-check-form-note { color: #C2C8C3; }
+.panel-icon { background: #FF3D9A; color: #202624; }
+.store-check-form input,.store-check-form select { background: #252B28; color: #FFFFFF; border-color: rgba(255,255,255,.22); }
+.store-check-form input::placeholder { color: #AEB6B0; }
+.store-check-submit { background: #FF3D9A; border-color: #FF3D9A; color: #202624; }
+.store-check-submit:hover { background: #F52889; border-color: #F52889; }
+
+.project-label { color: #FF3D9A; }
+.portfolio-art { background: linear-gradient(135deg,#2855D9 0%,#FF3D9A 100%); color: #FFFFFF; }
+.portfolio-copy .button { background: #2855D9; border-color: #2855D9; color: #FFFFFF; }
+.step-num { background: #2855D9; color: #FFFFFF; }
+.method-grid .eyebrow { color: #FF3D9A; }
+.about-mark { background: #2855D9; color: #FFFFFF; }
+.about-tags span { border-color: rgba(255,61,154,.38); }
+.contact-aside { border-left-color: #FF3D9A; }
+.contact-aside strong,.footer-brand span { color: #FF3D9A; }
+.contact-form .button { background: #2855D9; border-color: #2855D9; color: #FFFFFF; }
+.contact-form .button.secondary { background: transparent; color: #FFFFFF; border-color: rgba(255,255,255,.4); }
+footer { border-top: 1px solid rgba(255,61,154,.18); }
+
+@media(max-width:760px) {
+  .nav-links { background: #202624; }
+}
