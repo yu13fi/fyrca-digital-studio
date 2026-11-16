@@ -211,3 +211,86 @@ footer { padding:25px 0; background:var(--forest-deep); color:rgba(246,242,233,.
   .portfolio-copy h3 { font-size:1.65rem; }
   .footer-inner { align-items:flex-start; flex-direction:column; }
 }
+
+
+/* FYRCA visual refresh — paleta equilibrada aprobada */
+:root {
+  --forest: #292D2B;
+  --forest-deep: #202624;
+  --forest-soft: #3C4641;
+  --cream: #F5F1E9;
+  --paper: #FBF9F4;
+  --pink: #C98F91;
+  --pistachio: #DCE6E1;
+  --butter: #F5F1E9;
+  --sky: #DCE6E1;
+  --ink: #292D2B;
+  --muted: #626A65;
+  --line: rgba(41, 45, 43, .13);
+}
+body { background: var(--cream); color: var(--ink); }
+.nav-wrap { background: rgba(245,241,233,.96); }
+.brand-mark { background: var(--forest); color: var(--pink); }
+.nav-links { color: #626A65; }
+.nav-cta,.button { background: var(--forest); border-color: var(--forest); color: var(--cream); }
+.nav-cta:hover,.button:hover { background: var(--forest-soft); }
+.button.secondary { background: transparent; color: var(--forest); border-color: rgba(41,45,43,.3); }
+
+/* Hero claro para una primera impresión más liviana */
+.hero { background: var(--cream); color: var(--forest); }
+.hero::before { background: radial-gradient(circle, rgba(201,143,145,.16), transparent 68%); }
+.hero .eyebrow { color: #626A65; }
+.hero h1 span { color: #B9787D; }
+.hero-copy { color: #626A65; }
+.hero .button { background: var(--forest); border-color: var(--forest); color: var(--cream); }
+.hero .button:hover { background: var(--forest-soft); }
+.hero .button.secondary { background: transparent; border-color: rgba(41,45,43,.3); color: var(--forest); }
+.hero-note,.hero-bottom { color: #69716B; }
+.hero-bottom { border-top-color: rgba(41,45,43,.16); }
+.art-orbit { border-color: rgba(41,45,43,.18); }
+.orbit-two { border-color: rgba(41,45,43,.12); }
+.art-core { background: var(--pistachio); color: var(--forest); box-shadow: 18px 22px 0 rgba(201,143,145,.72); }
+.sticker-pink { background: var(--pink); color: var(--forest); }
+.sticker-yellow { background: var(--pistachio); color: var(--forest); }
+.art-caption { color: #626A65; }
+
+/* Servicios: tres tarjetas suaves, sin competir entre sí */
+.services-section { background: var(--paper); }
+.service-ecommerce { background: #F3E5E3; }
+.service-qa { background: #E5ECE7; }
+.service-support { background: #F5F1E9; }
+.service-card { border-color: rgba(41,45,43,.09); box-shadow: 0 8px 24px rgba(41,45,43,.035); }
+.service-kicker { color: #626A65; }
+.service-symbol { background: rgba(41,45,43,.07); }
+
+/* Plataformas y portfolio mantienen continuidad clara */
+.platforms-section,.portfolio-section,.about-section { background: var(--cream); }
+.platform-index,.platform-item:nth-child(2) .platform-index,.platform-item:nth-child(3) .platform-index { background: var(--pistachio); }
+.platform-item:nth-child(2) .platform-index { background: #EAD8D7; }
+.platform-item:nth-child(3) .platform-index { background: #E9E6DE; }
+
+/* Store Check como único bloque oscuro de diagnóstico */
+.store-check { background: var(--forest); color: var(--cream); }
+.store-check .eyebrow { color: var(--pistachio); }
+.store-check-copy h2 span { color: var(--pink); }
+.store-check-copy>p,.store-check-points small { color: rgba(245,241,233,.76); }
+.store-check-points>div>span:first-child { background: rgba(220,230,225,.14); color: var(--pistachio); }
+.store-check-note { color: rgba(245,241,233,.62); }
+.store-check-panel { background: var(--paper); border-color: rgba(245,241,233,.12); }
+
+/* Metodología y contacto comparten el carbón de marca */
+.method-section,.contact-section { background: var(--forest); }
+.method-grid .eyebrow,.contact-section .eyebrow { color: var(--pistachio); }
+.method-grid h2 span { color: var(--pink); }
+.step-num { background: var(--pistachio); color: var(--forest); }
+.contact-aside { border-left-color: var(--pink); }
+.contact-aside strong { color: var(--pistachio); }
+.about-mark { background: var(--pistachio); }
+.project-label { color: #8A6668; }
+.about-tags span { background: var(--cream); }
+footer { background: var(--forest-deep); }
+
+@media (max-width:760px) {
+  .hero { background: var(--cream); }
+  .hero-bottom { color: #69716B; }
+}
