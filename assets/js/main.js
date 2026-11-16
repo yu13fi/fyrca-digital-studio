@@ -22,11 +22,6 @@ function initializeNavigation() {
   };
 
   button.addEventListener("click", toggleMenu);
-  button.addEventListener("touchend", (event) => {
-    if (event.cancelable) event.preventDefault();
-    toggleMenu(event);
-  }, { passive: false });
-
   menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
   document.addEventListener("click", (event) => {
     if (!menu.contains(event.target) && !button.contains(event.target)) closeMenu();
